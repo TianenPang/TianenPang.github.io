@@ -371,6 +371,12 @@
         return Math.floor(Math.random() * (max - min + 1) + min);
     };
 
+    document.body.addEventListener('touchmove', function(e) {
+        if(e._isScroller) return;
+        e.preventDefault();
+    }, {
+        passive: false
+    });
 
 </script>
 </html>
