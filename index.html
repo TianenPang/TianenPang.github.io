@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <base href="/"/>
+    <title>TianenPang - Github Pages</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Github,Github Pages"/>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style type="text/css">
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #B70D00;
+            user-select: none;
+        }
+
+        h1 {
+            font-family: "Mountains of Christmas", sans-serif;
+            font-size: 25px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 700;
+            line-height: 23px;
+        }
+
+        p {
+            font-family: "Mountains of Christmas", sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 400;
+            line-height: 23px;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .christmas-tree {
+            width: 300px;
+            height: 300px;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 100px;
+        }
+
+        .text {
+            height: 50px;
+            margin: auto;
+            position: absolute;
+            top: 250px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .warning {
+            display: block;
+            letter-spacing: 1.5px;
+            color: rgba(204, 153, 1, 1);
+        }
+
+        .happy {
+            display: block;
+            letter-spacing: 1.5px;
+            color: rgba(255, 255, 255, 1);
+        }
+
+        .drop {
+            position: absolute;
+            top: 0;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        .snow {
+            height: 8px;
+            width: 8px;
+            border-radius: 100%;
+            background-color: #FFF;
+            box-shadow: 0 0 10px #FFF
+        }
+
+        .animate {
+            animation: falling 8.5s infinite ease-in;
+        }
+
+        @keyframes falling {
+            0% {
+                top: 0;
+                opacity: 1;
+            }
+            100% {
+                top: 1500px;
+                opacity: 0
+            }
+        }
+
+        .lightrope {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            overflow: hidden;
+            text-align: center;
+            white-space: nowrap;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .lightrope li {
+            position: relative;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            list-style: none;
+            padding: 0;
+            width: 12px;
+            height: 28px;
+            border-radius: 50%;
+            margin: 20px;
+            display: inline-block;
+            background: #00f7a5;
+            box-shadow: 0 5px 24px 3px #00f7a5;
+            -webkit-animation-name: flash-1;
+            animation-name: flash-1;
+            -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+        }
+
+        .lightrope li:nth-child(2n+1) {
+            background: cyan;
+            box-shadow: 0 5px 24px 3px rgba(0, 255, 255, 0.5);
+            -webkit-animation-name: flash-2;
+            animation-name: flash-2;
+            -webkit-animation-duration: 0.4s;
+            animation-duration: 0.4s;
+        }
+
+        .lightrope li:nth-child(4n+2) {
+            background: #f70094;
+            box-shadow: 0 5px 24px 3px #f70094;
+            -webkit-animation-name: flash-3;
+            animation-name: flash-3;
+            -webkit-animation-duration: 1.1s;
+            animation-duration: 1.1s;
+        }
+
+        .lightrope li:nth-child(odd) {
+            -webkit-animation-duration: 1.8s;
+            animation-duration: 1.8s;
+        }
+
+        .lightrope li:nth-child(3n+1) {
+            -webkit-animation-duration: 1.4s;
+            animation-duration: 1.4s;
+        }
+
+        .lightrope li:before {
+            content: "";
+            position: absolute;
+            background: #222;
+            width: 10px;
+            height: 9px;
+            border-radius: 3px;
+            top: -4.6666666667px;
+            left: 1px;
+        }
+
+        .lightrope li:after {
+            content: "";
+            top: -14px;
+            left: 9px;
+            position: absolute;
+            width: 52px;
+            height: 19px;
+            border-bottom: solid #222 2px;
+            border-radius: 50%;
+        }
+
+        .lightrope li:last-child:after {
+            content: none;
+        }
+
+        .lightrope li:first-child {
+            margin-left: -40px;
+        }
+
+        @-webkit-keyframes flash-1 {
+            0%, 100% {
+                background: #00f7a5;
+                box-shadow: 0 5px 24px 3px #00f7a5;
+            }
+            50% {
+                background: rgba(0, 247, 165, 0.4);
+                box-shadow: 0 5px 24px 3px rgba(0, 247, 165, 0.2);
+            }
+        }
+
+        @keyframes flash-1 {
+            0%, 100% {
+                background: #00f7a5;
+                box-shadow: 0 5px 24px 3px #00f7a5;
+            }
+            50% {
+                background: rgba(0, 247, 165, 0.4);
+                box-shadow: 0 5px 24px 3px rgba(0, 247, 165, 0.2);
+            }
+        }
+
+        @-webkit-keyframes flash-2 {
+            0%, 100% {
+                background: cyan;
+                box-shadow: 0 5px 24px 3px cyan;
+            }
+            50% {
+                background: rgba(0, 255, 255, 0.4);
+                box-shadow: 0 5px 24px 3px rgba(0, 255, 255, 0.2);
+            }
+        }
+
+        @keyframes flash-2 {
+            0%, 100% {
+                background: cyan;
+                box-shadow: 0 5px 24px 3px cyan;
+            }
+            50% {
+                background: rgba(0, 255, 255, 0.4);
+                box-shadow: 0 5px 24px 3px rgba(0, 255, 255, 0.2);
+            }
+        }
+
+        @-webkit-keyframes flash-3 {
+            0%, 100% {
+                background: #f70094;
+                box-shadow: 0 5px 24px 3px #f70094;
+            }
+            50% {
+                background: rgba(247, 0, 148, 0.4);
+                box-shadow: 0 5px 24px 3px rgba(247, 0, 148, 0.2);
+            }
+        }
+
+        @keyframes flash-3 {
+            0%, 100% {
+                background: #f70094;
+                box-shadow: 0 5px 24px 3px #f70094;
+            }
+            50% {
+                background: rgba(247, 0, 148, 0.4);
+                box-shadow: 0 5px 24px 3px rgba(247, 0, 148, 0.2);
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <ul class="lightrope">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="christmas-tree">
+        <lottie-player
+                loop
+                autoplay
+                speed="0.5"
+                key="christmas-tree"
+                background="transparent"
+                src="assets/christmas-tree.json">
+        </lottie-player>
+    </div>
+    <div class="text">
+        <p class="warning">site is under construction...</span>
+        <h1 class="happy">merry christmas and happy new year</h1>
+    </div>
+</div>
+</body>
+<script src="assets/jquery.min.js"></script>
+<script src="assets/lottie-player.js"></script>
+<script type="text/javascript">
+
+    snowDrop(150, randomInt(1035, 1280));
+    snow(150, 150);
+
+    function snow(num, speed) {
+        if (num > 0) {
+            setTimeout(function () {
+                $('#drop_' + randomInt(1, 250)).addClass('animate');
+                num--;
+                snow(num, speed);
+            }, speed);
+        }
+    };
+
+    function snowDrop(num, position) {
+        if (num > 0) {
+            var drop = '<div class="drop snow" id="drop_' + num + '"></div>';
+
+            $('body').append(drop);
+            $('#drop_' + num).css('left', position);
+            num--;
+            snowDrop(num, randomInt(60, 1280));
+        }
+    };
+
+    function randomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    };
+
+
+</script>
+</html>
