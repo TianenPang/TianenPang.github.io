@@ -11,11 +11,6 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <style type="text/css">
 
-        html{
-            position:fixed;
-            overflow: hidden !important;
-        }
-
         body {
             width: 100vw;
             height: 100vh;
@@ -343,13 +338,26 @@
 <script src="assets/lottie-player.js"></script>
 <script type="text/javascript">
 
-    snowDrop(150, randomInt(1035*2, 1280*2));
-    snow(150, 150);
+    function IsPC() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = ["Android", "iPhone","SymbianOS", "Windows Phone","iPad", "iPod"];
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+
+    snowDrop(IsPC() ? 300 : 50, randomInt(60, $(window).width() ));
+    snow(IsPC() ? 300 : 50, 150);
 
     function snow(num, speed) {
         if (num > 0) {
             setTimeout(function () {
-                $('#drop_' + randomInt(1*2, 250*2)).addClass('animate');
+                $('#drop_' + randomInt(1, 250)).addClass('animate');
                 num--;
                 snow(num, speed);
             }, speed);
@@ -363,7 +371,7 @@
             $('body').append(drop);
             $('#drop_' + num).css('left', position);
             num--;
-            snowDrop(num, randomInt(60*2, 1280*2));
+            snowDrop(num, randomInt(60, $(window).width() ));
         }
     };
 
